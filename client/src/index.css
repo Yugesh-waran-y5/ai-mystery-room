@@ -1,0 +1,223 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0b1020;
+  color: #f4f5fa;
+}
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 0%, #25244b 0%, transparent 55%),
+    #0b1020;
+}
+
+.navbar {
+  height: 75px;
+  padding: 0 8%;
+  border-bottom: 1px solid #292d40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.brand svg {
+  color: #a78bfa;
+}
+
+.highlight, h1 span {
+  color: #a78bfa;
+}
+
+.nav-label {
+  color: #a0a4b8;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.container {
+  width: min(900px, 90%);
+  margin: auto;
+  padding: 75px 0 30px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #c4b5fd;
+  border: 1px solid #50417a;
+  background: #211b3b;
+  border-radius: 30px;
+  padding: 10px 18px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: clamp(34px, 6vw, 58px);
+  line-height: 1.2;
+  margin: 28px 0 18px;
+}
+
+.description {
+  color: #a7abc0;
+  line-height: 1.8;
+  max-width: 620px;
+  margin: auto;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 48px 0;
+}
+
+.feature {
+  background: #151b30;
+  border: 1px solid #292f48;
+  padding: 25px 12px;
+  border-radius: 14px;
+}
+
+.feature svg {
+  color: #a78bfa;
+  width: 28px;
+  height: 28px;
+}
+
+.feature h3 {
+  margin: 12px 0 8px;
+}
+
+.feature p, .setup > p {
+  color: #a7abc0;
+  font-size: 13px;
+}
+
+.setup {
+  text-align: left;
+  background: #151b30;
+  border: 1px solid #303650;
+  border-radius: 18px;
+  padding: 30px;
+  max-width: 650px;
+  margin: auto;
+}
+
+.setup h2 {
+  margin-bottom: 8px;
+}
+
+.setup > p {
+  margin-bottom: 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+textarea, select {
+  width: 100%;
+  background: #0c1224;
+  border: 1px solid #39415d;
+  border-radius: 9px;
+  padding: 14px;
+  color: white;
+  font: inherit;
+  outline: none;
+}
+
+textarea:focus, select:focus {
+  border-color: #a78bfa;
+}
+
+button {
+  margin-top: 12px;
+  padding: 15px;
+  border: none;
+  border-radius: 9px;
+  background: #8b5cf6;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #7542e8;
+}
+
+button span {
+  margin-left: 8px;
+}
+
+.message {
+  color: #c4b5fd;
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+footer {
+  margin-top: 60px;
+  color: #777f9b;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .nav-label {
+    font-size: 9px;
+  }
+
+  .setup {
+    padding: 20px;
+  }
+}
+.brand { text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 16px 0 32px; }
+.card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 16px; text-align: left; }
+.card.selected { border-color: #e0b84c; box-shadow: 0 0 0 2px rgba(224, 184, 76, 0.4); }
+.card.locked { opacity: 0.85; }
+.card.found { border-color: rgba(120, 200, 140, 0.6); }
+.hint-panel { margin: 16px 0 32px; }
+.accuse-bar { text-align: center; margin: 24px 0 48px; }
+.story { max-width: 800px; margin: 16px auto 32px; line-height: 1.7; text-align: left; }
+.message.error { color: #ff7b7b; }
+.score { font-size: 2rem; font-weight: 700; }
+.btn-link { display: inline-block; margin-top: 24px; padding: 12px 24px; border: 1px solid currentColor; border-radius: 8px; text-decoration: none; color: inherit; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }

@@ -209,15 +209,20 @@ footer {
   }
 }
 .brand { text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 16px 0 32px; }
-.card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 16px; text-align: left; }
-.card.selected { border-color: #e0b84c; box-shadow: 0 0 0 2px rgba(224, 184, 76, 0.4); }
-.card.locked { opacity: 0.85; }
-.card.found { border-color: rgba(120, 200, 140, 0.6); }
+.game, .result { max-width: 1000px; margin: 0 auto; padding: 24px 16px 64px; text-align: center; }
+.game h2 { margin-top: 32px; }
+.story { max-width: 800px; margin: 16px auto 32px; line-height: 1.7; font-size: 1.05rem; text-align: left; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 16px 0 32px; }
+.card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 18px; text-align: left; font-size: 1rem; line-height: 1.55; }
+.card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+.card button { margin-top: 12px; }
+.card.selected { border-color: #e0b84c; box-shadow: 0 0 0 2px rgba(224,184,76,0.4); }
+.card.found { border-color: rgba(120,200,140,0.6); }
 .hint-panel { margin: 16px 0 32px; }
+.hint-panel ol { padding-left: 20px; margin: 8px 0 12px; }
 .accuse-bar { text-align: center; margin: 24px 0 48px; }
-.story { max-width: 800px; margin: 16px auto 32px; line-height: 1.7; text-align: left; }
+.score { font-size: 2.2rem; font-weight: 700; margin: 8px 0; }
+.result .card { margin: 24px auto; max-width: 800px; }
 .message.error { color: #ff7b7b; }
-.score { font-size: 2rem; font-weight: 700; }
 .btn-link { display: inline-block; margin-top: 24px; padding: 12px 24px; border: 1px solid currentColor; border-radius: 8px; text-decoration: none; color: inherit; }
 button:disabled { opacity: 0.5; cursor: not-allowed; }

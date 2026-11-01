@@ -9,9 +9,24 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({
-  origin: process.env.CLIENT_URL || "http://localhost:5173"
-}));
+// Allowed website addresses. Spaces and a trailing slash are ignored.
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  "http://localhost:5173",
+  "https://ai-mystery-room-gray.vercel.app"
+]
+  .filter(Boolean)
+  .map((url) => url.trim().replace(/\/+$/, ""));
+
+app.use(
+  cors({
+    origin(origin, callback) {
+      // No origin = tools like PowerShell or health checks, which are fine.
+      if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+      callback(null, false);
+    }
+  })
+);
 
 app.use(express.json());
 

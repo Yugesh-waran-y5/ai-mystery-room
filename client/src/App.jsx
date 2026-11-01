@@ -4,7 +4,12 @@ import "./index.css";
 import Home from "./pages/Home.jsx";
 import Game from "./pages/Game.jsx";
 import Result from "./pages/Result.jsx";
+import axios from "axios";
 
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || "https://ai-mystery-room-api-kppi.onrender.com/api",
+  timeout: 240000 // mystery generation can take a while
+});
 function App() {
   return (
     <BrowserRouter>

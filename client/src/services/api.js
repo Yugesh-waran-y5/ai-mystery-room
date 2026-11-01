@@ -1,8 +1,13 @@
 import axios from "axios";
 
+// Local development uses your own server; the deployed site uses the Render backend.
+const FALLBACK_API_URL = import.meta.env.PROD
+  ? "https://ai-mystery-room-api-kppi.onrender.com/api"
+  : "http://localhost:5000/api";
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api",
-  timeout: 90000 // mystery generation can take a while
+  baseURL: import.meta.env.VITE_API_URL || FALLBACK_API_URL,
+  timeout: 240000 // mystery generation can take a while
 });
 
 export function errorMessage(err) {
